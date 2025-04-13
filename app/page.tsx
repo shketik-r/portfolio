@@ -77,14 +77,14 @@ export default async function Home() {
             @Ruslan_3101
           </a>
 
-          <a href="tel:+375288975649" target="_blank" className="flex items-center gap-3">
+          <a href="tel:+375298975649" target="_blank" className="flex items-center gap-3">
             <img src="/phone.png" alt="телефон" width={40} height={40} />
-            +375 (28) 897-56-49
+            +375 (29) 897-56-49
           </a>
 
-          <a href="viber://add?number=%2B375288975649" target="_blank" className="flex items-center gap-3">
+          <a href="viber://add?number=%2B375298975649" target="_blank" className="flex items-center gap-3">
             <img src="/viber.png" alt="viber" width={40} height={40} />
-            +375 (28) 897-56-49
+            +375 (29) 897-56-49
           </a>
           
           
