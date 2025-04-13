@@ -21,7 +21,7 @@ export default async function Home() {
       </section>
 
       <section className="mb-[100px] container " id="work">
-        <Title className="mb-20 text-center">Мои технологи</Title>
+        <Title className="mb-20 text-center max-sm:mb-4">Мои технологи</Title>
 
         <div className=" mx-auto max-w-[800px] grid grid-cols-6 gap-6 max-sm:grid-cols-3">
           <img src="./tech/vscode-icons_file-type-html.svg" alt="html" width={80} height={100} title="html" />
@@ -53,7 +53,7 @@ export default async function Home() {
 
 
       <section className="mb-[100px] container " id="projects">
-        <Title className="mb-20 text-center">Мои работы</Title>
+        <Title className="mb-20 text-center max-sm:mb-4">Мои работы</Title>
 
         <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1  gap-5 ">
 
@@ -68,7 +68,7 @@ export default async function Home() {
       </section>
 
       <section className="mb-[100px] container " id="contact">
-        <Title className="mb-20 text-center">Мои контакты</Title>
+        <Title className="mb-20 text-center max-sm:mb-4">Мои контакты</Title>
 
         <div className=" flex flex-wrap gap-5">
 
