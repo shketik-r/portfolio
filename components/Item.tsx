@@ -21,8 +21,7 @@ export const Item: React.FC<Props> = ({ item }) => {
         <Link href={`/projects/${item.id}`} className='px-5 py-1 bg-[#000000] text-[#ffffff] rounded-[8px]'>подробнее</Link>
       </div>
 
-      {/* <div dangerouslySetInnerHTML={{ __html: item.desc }}>
-      </div> */}
+
 
     </div>
   );

@@ -1,6 +1,7 @@
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
+import { Header } from "@/components";
 
 const geistNunito = Nunito({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body
         className={`${geistNunito.variable}`}
       >
+        <Header className="flex  py-4 mb-[100px] max-lg:mb-[50px]" />
         <main>{children}</main>
       </body>
     </html>

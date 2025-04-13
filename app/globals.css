@@ -32,3 +32,19 @@
   @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600;
 
 }
+
+.seo-text {
+  max-width: 1000px;
+}
+
+.seo-text p{
+  margin: 10px 0;
+}
+
+.seo-text ul{
+  list-style: disc;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

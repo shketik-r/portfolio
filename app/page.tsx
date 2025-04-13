@@ -1,18 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import { prisma } from "@/prisma/prisma-client";
-import { Header, Item, Title } from "@/components";
+import { Item, Title } from "@/components";
 
 export default async function Home() {
 
   const products = await prisma.product.findMany();
 
   console.log(products);
-  
+
   return (
     <>
-      <Header className="flex py-4 mb-[100px]" />
 
-      <section className="flex py-4 items-center justify-center gap-10 mb-[100px] container ">
+
+      <section className="flex py-4 items-center justify-center max-lg:flex-col gap-10 mb-[100px] container ">
         <h1 className="text-2xl font-medium">
           Привет! <br />
           Меня зовут Руслан, <br /> я <span className="grad">Frontend</span> разработчик.
@@ -20,10 +20,10 @@ export default async function Home() {
         <img src="/avatar.jpg" alt="avatar" width={280} height={380} />
       </section>
 
-      <section className="mb-[100px] container ">
+      <section className="mb-[100px] container " id="work">
         <Title className="mb-20 text-center">Мои технологи</Title>
 
-        <div className=" mx-auto max-w-[800px] grid grid-cols-6 gap-6">
+        <div className=" mx-auto max-w-[800px] grid grid-cols-6 gap-6 max-sm:grid-cols-3">
           <img src="./tech/vscode-icons_file-type-html.svg" alt="html" width={80} height={100} title="html" />
 
           <img src="./tech/vscode-icons_file-type-css.svg" alt="css" width={80} height={80} title="css" />
@@ -52,16 +52,42 @@ export default async function Home() {
       </section >
 
 
-      <section className="mb-[100px] container ">
+      <section className="mb-[100px] container " id="projects">
         <Title className="mb-20 text-center">Мои работы</Title>
 
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1  gap-5 ">
 
           {
             products.map((product) => (
               <Item key={product.id} item={product} />
             ))
           }
+        </div>
+
+
+      </section>
+
+      <section className="mb-[100px] container " id="contact">
+        <Title className="mb-20 text-center">Мои контакты</Title>
+
+        <div className=" flex flex-wrap gap-5">
+
+          <a href="https://t.me/@Ruslan_3101" target="_blank" className="flex items-center gap-3" >
+            <img src="/telegram.png" alt="telegram" width={40} height={40} />
+            @Ruslan_3101
+          </a>
+
+          <a href="tel:+375288975649" target="_blank" className="flex items-center gap-3">
+            <img src="/phone.png" alt="телефон" width={40} height={40} />
+            +375 (28) 897-56-49
+          </a>
+
+          <a href="viber://add?number=%2B375288975649" target="_blank" className="flex items-center gap-3">
+            <img src="/viber.png" alt="viber" width={40} height={40} />
+            +375 (28) 897-56-49
+          </a>
+          
+          
         </div>
 
 
