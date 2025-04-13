@@ -13,10 +13,16 @@ export default async function Home() {
 
 
       <section className="flex py-4 items-center justify-center max-lg:flex-col gap-10 mb-[100px] container ">
-        <h1 className="text-2xl font-medium">
-          Привет! <br />
-          Меня зовут Руслан, <br /> я <span className="grad">Frontend</span> разработчик.
-        </h1>
+        <div>
+          <h1 className="text-2xl font-medium mb-3">
+            Привет! <br />
+            Меня зовут Руслан, <br /> я <span className="grad">Frontend</span> разработчик.
+          </h1>
+          <p className="max-w-[500px] font-medium">
+            C опытом в разработке веб-приложений, включая интернет-магазины и лендинги. Активно использую современные технологии, такие как JavaScript, AlpineJs и React, и постоянно развиваюсь, изучая NEXT.js для повышения производительности своих проектов.
+          </p>
+        </div>
+
         <img src="/avatar.jpg" alt="avatar" width={280} height={380} />
       </section>
 
@@ -86,8 +92,8 @@ export default async function Home() {
             <img src="/viber.png" alt="viber" width={40} height={40} />
             +375 (29) 897-56-49
           </a>
-          
-          
+
+
         </div>
 
 
