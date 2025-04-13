@@ -9,12 +9,14 @@ datasource db {
 }
 
 model Product {
-  id       Int    @id @default(autoincrement())
-  
-  name     String
-  imageUrl String
+  id        Int    @id @default(autoincrement())
+  name      String
+  linkSite  String
+  imageUrl  String
+  desc      String
+  stack     String
+  functions String
 
   createAt DateTime @default(now())
   updateAt DateTime @updatedAt
 }
-

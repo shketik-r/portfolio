@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${geistNunito.variable}`}
       >
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

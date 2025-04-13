@@ -2,12 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+
+
+@layer base {
+  :root {
+    --blue: #2855da;
+    --violet: #7e52ec;
+    --dark: #102129;
+    --background: #102129;
+  }
+
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    @apply mx-auto px-5;
+  }
+
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+
+.hover-link {
+  @apply relative inline-block before:absolute before:bottom-0 before:left-[50%] before:h-[2px] before:translate-x-[-50%] before:w-0 hover:before:w-[100%] before:bg-black before:transition-all;
+}
+
+.grad {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600;
+
 }
