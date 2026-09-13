@@ -2,7 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------------------------------------------------------ */
+/* Прелоадер. Рендерится сразу в HTML и виден до загрузки JS.          */
+/* Скрывается, когда <html> получает класс .app-loaded.                */
+/* ------------------------------------------------------------------ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #102129;
+  transition: opacity 0.5s ease;
+}
 
+/* Круговой спиннер */
+.preloader-spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-top-color: #7e52ec;
+  border-right-color: #2855da;
+  animation: preloader-spin 0.8s linear infinite;
+}
+
+@keyframes preloader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Скрытие прелоадера */
+html.app-loaded #preloader {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Блокируем скролл, пока прелоадер активен */
+html:not(.app-loaded) body {
+  overflow: hidden;
+}
 
 @layer base {
   :root {
@@ -12,39 +55,143 @@
     --background: #102129;
   }
 
-
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#102129] text-white antialiased;
   }
 
   .container {
     @apply mx-auto px-5;
   }
 
+  ::selection {
+    background: rgba(126, 82, 236, 0.4);
+  }
 }
 
+@layer components {
+  /* Ссылка с анимированным подчёркиванием */
+  .hover-link {
+    @apply relative inline-block;
+  }
+  .hover-link::after {
+    content: "";
+    @apply absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-gradient-to-r from-[#2855da] to-[#7e52ec] transition-all duration-300;
+  }
+  .hover-link:hover::after {
+    @apply w-full;
+  }
 
-.hover-link {
-  @apply relative inline-block before:absolute before:bottom-0 before:left-[50%] before:h-[2px] before:translate-x-[-50%] before:w-0 hover:before:w-[100%] before:bg-black before:transition-all;
-}
+  /* Градиентный текст */
+  .grad {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#5b8cff] via-[#7e52ec] to-[#b06cff];
+  }
 
-.grad {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600;
+  /* Стеклянная карточка */
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md;
+  }
 
+  /* Кнопка-градиент */
+  .btn-grad {
+    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#2855da] to-[#7e52ec] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#7e52ec]/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#7e52ec]/40;
+  }
+
+  /* Вторичная кнопка */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/[0.04] px-5 py-2 text-sm font-semibold text-white/90 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.08];
+  }
+
+  /* Секция с отступами */
+  .section {
+    @apply mb-[110px] max-lg:mb-[70px];
+  }
 }
 
 .seo-text {
   max-width: 1000px;
+  @apply leading-relaxed text-white/80;
 }
 
-.seo-text p{
+.seo-text p {
   margin: 10px 0;
 }
 
-.seo-text ul{
+.seo-text ul {
   list-style: disc;
   padding-left: 30px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.seo-text h1,
+.seo-text h2,
+.seo-text h3 {
+  @apply text-white;
+}
+
+/* Мягкое свечение-ореол на фоне */
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-glow::before,
+.bg-glow::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.25;
+}
+
+.bg-glow::before {
+  top: -200px;
+  left: -150px;
+  background: #2855da;
+}
+
+.bg-glow::after {
+  top: 20%;
+  right: -200px;
+  background: #7e52ec;
+}
+
+/* Появление карточек */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+/* Плавающая анимация аватара */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

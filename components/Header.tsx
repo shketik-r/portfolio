@@ -10,11 +10,11 @@ export const Header: React.FC<Props> = ({ className }) => {
   return (
     <header className={className}>
       <div className='container flex'>
-        <nav className='flex items-center flex-wrap gap-[30px] max-sm:gap-2 mx-auto text'>
-          <Link className='hover-link text-lg font-medium' href="/">Главная</Link>
-          <Link className='hover-link text-lg font-medium' href="/#work">Технологии</Link>
-          <Link className='hover-link text-lg font-medium' href="/#projects">Проекты</Link>
-          <Link className='hover-link text-lg font-medium' href="/#contact">Контакты</Link>
+        <nav className='glass flex items-center flex-wrap gap-1 mx-auto rounded-full px-2 py-2 text-sm shadow-lg shadow-black/20'>
+          <Link className='rounded-full px-4 py-2 font-medium transition-colors hover:bg-white/10' href="/">Главная</Link>
+          <Link className='rounded-full px-4 py-2 font-medium transition-colors hover:bg-white/10' href="/#work">Технологии</Link>
+          <Link className='rounded-full px-4 py-2 font-medium transition-colors hover:bg-white/10' href="/#projects">Проекты</Link>
+          <Link className='rounded-full px-4 py-2 font-medium transition-colors hover:bg-white/10' href="/#contact">Контакты</Link>
         </nav>
       </div>
     </header>

@@ -11,18 +11,18 @@ interface Props {
 export const Item: React.FC<Props> = ({ item }) => {
 
   return (
-    <div className="flex flex-col gap-5 rounded-lg overflow-hidden bg-[#ffffff] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.25)] ">
-      <img className='w-full object-contain' src={item.imageUrl} alt={item.name} />
-
-      <h3 className='text-2xl px-3'>{item.name}</h3>
-
-      <div className='flex flex-wrap gap-3 justify-between px-3 pb-3'>
-        <a href={`${item.linkSite}`} target="_blank" className='px-5 py-1 bg-[#000000] text-[#ffffff] rounded-[8px]'>сайт</a>
-        <Link href={`/projects/${item.id}`} className='px-5 py-1 bg-[#000000] text-[#ffffff] rounded-[8px]'>подробнее</Link>
+    <div className="glass flex flex-col overflow-hidden">
+      <div className='relative overflow-hidden'>
+        <img className='w-full object-cover' src={item.imageUrl} alt={item.name} />
+        <div className='pointer-events-none absolute inset-0 bg-gradient-to-t from-[#102129] via-transparent to-transparent opacity-80' />
       </div>
 
+      <h3 className='px-5 pt-4 text-2xl font-bold'>{item.name}</h3>
 
-
+      <div className='mt-auto flex flex-wrap gap-3 px-5 pb-5 pt-4'>
+        <a href={`${item.linkSite}`} target="_blank" rel="noopener noreferrer" className='btn-grad'>сайт</a>
+        <Link href={`/projects/${item.id}`} className='btn-ghost'>подробнее</Link>
+      </div>
     </div>
   );
 };

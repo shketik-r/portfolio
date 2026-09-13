@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { prisma } from "@/prisma/prisma-client";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 
@@ -36,29 +37,44 @@ export default async function CategoryPage(PageProps: { params: Params }) {
   const { id } = await PageProps.params;
   const product = await getProduct(id);
   return (
-    <section className=" container">
-      <h1 className="text-3xl font-bold my-3 mb-[40px] text-center">{product.name}</h1>
+    <section className="container section">
+      <Link
+        href="/#projects"
+        className="btn-ghost mx-auto mb-10 flex w-fit"
+      >
+        ← Назад к работам
+      </Link>
 
-      <div className="flex flex-col gap-3">
-        <div className="flex justify-center">
-          <img src={`../${product.imageUrl}`} alt={product.name} width={800} height={600} />
+      <h1 className="mb-[50px] text-center text-4xl font-extrabold tracking-tight max-sm:text-3xl">
+        <span className="grad">{product.name}</span>
+      </h1>
+
+      <div className="flex flex-col gap-8">
+        <div className="glass flex justify-center overflow-hidden p-3">
+          <img
+            className="w-full rounded-xl object-cover"
+            src={`../${product.imageUrl}`}
+            alt={product.name}
+            width={800}
+            height={600}
+          />
         </div>
 
-        <div className="seo-text mb-5">
-          <h2 className="text-2xl mb-5">Описание сайта</h2>
+        <div className="glass seo-text p-6 sm:p-8">
+          <h2 className="mb-5 text-2xl font-bold">Описание сайта</h2>
           <div dangerouslySetInnerHTML={{ __html: product.desc }}>
           </div>
         </div>
 
-        <div className="seo-text mb-5">
-          <h2 className="text-2xl mb-5">Основные функции сайта</h2>
+        <div className="glass seo-text p-6 sm:p-8">
+          <h2 className="mb-5 text-2xl font-bold">Основные функции сайта</h2>
           <div dangerouslySetInnerHTML={{ __html: product.functions }}>
           </div>
         </div>
 
-        <div className="seo-text mb-5">
-          <h2 className="text-2xl mb-5">Технологии, используемые на сайте</h2>
-          <div className="font-semibold text-[20px]" dangerouslySetInnerHTML={{ __html: product.stack }}>
+        <div className="glass seo-text p-6 sm:p-8">
+          <h2 className="mb-5 text-2xl font-bold">Технологии, используемые на сайте</h2>
+          <div className="text-[20px] font-semibold" dangerouslySetInnerHTML={{ __html: product.stack }}>
           </div>
         </div>
 
