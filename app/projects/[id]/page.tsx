@@ -45,7 +45,7 @@ export default async function CategoryPage(PageProps: { params: Params }) {
         ← Назад к работам
       </Link>
 
-      <h1 className="mb-[50px] text-center text-4xl font-extrabold tracking-tight max-sm:text-3xl">
+      <h1 className="mb-10 text-center text-4xl font-extrabold tracking-tight max-sm:mb-6 max-sm:text-3xl">
         <span className="grad">{product.name}</span>
       </h1>
 

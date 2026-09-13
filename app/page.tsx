@@ -10,12 +10,12 @@ export default async function Home() {
     <>
 
 
-      <section className="container section flex items-center justify-center gap-16 py-4 max-lg:flex-col">
-        <div className="animate-fade-up">
-          <span className="mb-5 inline-block rounded-full border border-white/15 bg-white/[0.04] px-4 py-1 text-sm font-medium text-white/70">
+      <section className="container section flex items-center justify-center gap-16 py-4 max-lg:flex-col max-lg:gap-10 max-sm:gap-8">
+        <div className="animate-fade-up max-lg:text-center">
+          <span className="mb-5 inline-block rounded-full border border-white/15 bg-white/[0.04] px-4 py-1 text-xs font-medium text-white/70 sm:text-sm">
             Frontend Developer · 3 года коммерческого опыта
           </span>
-          <h1 className="mb-5 text-4xl font-extrabold leading-tight max-sm:text-3xl">
+          <h1 className="mb-5 text-4xl font-extrabold leading-tight max-lg:text-center max-sm:text-3xl">
             Привет! <br />
             Меня зовут Руслан, <br /> я <span className="grad">Frontend</span> разработчик.
           </h1>
@@ -44,12 +44,12 @@ export default async function Home() {
             к производительности.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3 max-lg:justify-center">
             <a href="#projects" className="btn-grad">Смотреть работы</a>
             <a href="#contact" className="btn-ghost">Связаться</a>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 max-lg:justify-center">
             {[
               { value: "3+", label: "года опыта" },
               { value: "Vue / React", label: "фронтенд" },
@@ -68,10 +68,10 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="relative animate-float">
+        <div className="relative animate-float max-lg:order-first">
           <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-[#2855da] to-[#7e52ec] opacity-20 blur-2xl" />
           <img
-            className="relative rounded-3xl border border-white/10 object-cover shadow-2xl shadow-black/40"
+            className="relative w-[220px] rounded-3xl border border-white/10 object-cover shadow-2xl shadow-black/40 sm:w-[280px]"
             src="/avatar.jpg"
             alt="avatar"
             width={280}
@@ -83,7 +83,7 @@ export default async function Home() {
       <section className="container section" id="work">
         <Title className="mb-20 text-center max-sm:mb-10">Технологи</Title>
 
-        <div className="mx-auto grid max-w-[800px] grid-cols-6 gap-6 max-sm:grid-cols-3">
+        <div className="mx-auto grid max-w-[800px] grid-cols-6 items-center gap-6 max-lg:grid-cols-5 max-md:grid-cols-4 max-sm:grid-cols-3 max-sm:gap-4">
           <img src="./tech/vscode-icons_file-type-html.svg" alt="html" width={80} height={100} title="html" />
 
           <img src="./tech/vscode-icons_file-type-css.svg" alt="css" width={80} height={80} title="css" />
@@ -141,7 +141,7 @@ export default async function Home() {
             href="https://t.me/@Ruslan_3101"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass flex items-center gap-3 px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-white/25"
+            className="glass flex w-full items-center justify-center gap-3 px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-white/25 sm:w-auto"
           >
             <img src="/telegram.png" alt="telegram" width={32} height={32} />
             @Ruslan_3101
@@ -149,7 +149,7 @@ export default async function Home() {
 
           <a
             href="tel:+375298975649"
-            className="glass flex items-center gap-3 px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-white/25"
+            className="glass flex w-full items-center justify-center gap-3 px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-white/25 sm:w-auto"
           >
             <img src="/phone.png" alt="телефон" width={32} height={32} />
             +375 (29) 897-56-49
@@ -157,7 +157,7 @@ export default async function Home() {
 
           <a
             href="viber://add?number=%2B375298975649"
-            className="glass flex items-center gap-3 px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-white/25"
+            className="glass flex w-full items-center justify-center gap-3 px-5 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-white/25 sm:w-auto"
           >
             <img src="/viber.png" alt="viber" width={32} height={32} />
             +375 (29) 897-56-49

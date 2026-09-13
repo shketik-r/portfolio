@@ -60,11 +60,11 @@ html:not(.app-loaded) body {
   }
 
   body {
-    @apply bg-[#102129] text-white antialiased;
+    @apply overflow-x-hidden bg-[#102129] text-white antialiased;
   }
 
   .container {
-    @apply mx-auto px-5;
+    @apply mx-auto w-full px-5;
   }
 
   ::selection {
@@ -93,6 +93,11 @@ html:not(.app-loaded) body {
   /* Стеклянная карточка */
   .glass {
     @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md;
+  }
+
+  /* Плотное стекло — для выпадающих панелей, чтобы фон не просвечивал */
+  .glass-strong {
+    @apply rounded-2xl border border-white/10 bg-[#16262f]/95 backdrop-blur-xl;
   }
 
   /* Кнопка-градиент */
