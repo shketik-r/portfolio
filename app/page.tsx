@@ -89,6 +89,8 @@ export default async function Home() {
           <img src="./tech/vscode-icons_file-type-css.svg" alt="css" width={80} height={80} title="css" />
 
           <img src="./tech/logos_sass.svg" alt="scss" width={80} height={80} title="scss" />
+          <img src="./tech/tailwind.png" alt="tailwind" width={80} height={80} title="tailwind" />
+
 
           <img src="./tech/vscode-icons_file-type-js-official.svg" alt="js" width={80} height={80} title="js" />
 
