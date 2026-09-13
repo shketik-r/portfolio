@@ -31,9 +31,17 @@ export default async function Home() {
             <span className="font-semibold text-white"> Битрикс</span>.
           </p>
           <p className="mt-3 max-w-[520px] font-medium leading-relaxed text-white/60">
-            Создаю быстрые, адаптивные и удобные интерфейсы, внимательно отношусь к деталям
-            и постоянно развиваюсь — сейчас углубляюсь в <span className="font-semibold text-white">Next.js </span>
-            и современные подходы к производительности.
+            Отлично разбираюсь в чужом коде и занимаюсь поддержкой
+            <span className="font-semibold text-white"> 30+ проектов</span> — банков и интернет-магазинов.
+            Принимал участие в разработке сайта для
+            <span className="font-semibold text-white"> Беларусбанка</span>.
+          </p>
+          <p className="mt-3 max-w-[520px] font-medium leading-relaxed text-white/60">
+            Создаю быстрые, адаптивные и удобные интерфейсы, внимательно отношусь к деталям.
+            Активно интегрирую в работу AI-инструменты для автоматизации рутины и ускорения
+            разработки, а также постоянно развиваюсь — сейчас углубляюсь в
+            <span className="font-semibold text-white"> Next.js</span> и современные подходы
+            к производительности.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
