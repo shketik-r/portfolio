@@ -6,8 +6,10 @@
 
 | Документ | Описание |
 |----------|----------|
-| [architecture.md](./architecture.md) | Архитектура проекта и структура папок |
+| [project-overview.md](./project-overview.md) | Обзор проекта, возможности, ограничения |
 | [tech-stack.md](./tech-stack.md) | Используемые технологии и зависимости |
+| [adding-projects.md](./adding-projects.md) | Как добавить новый проект в портфолио |
+| [architecture.md](./architecture.md) | Архитектура проекта и структура папок |
 | [database.md](./database.md) | Схема БД, Prisma и работа с данными |
 | [deployment.md](./deployment.md) | Деплой на Vercel и настройка окружения |
 | [development.md](./development.md) | Локальная разработка и скрипты |
