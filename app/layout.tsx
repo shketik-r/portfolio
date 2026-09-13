@@ -1,6 +1,7 @@
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
+import Script from "next/script";
 import { Header, PageTransition } from "@/components";
 
 /**
@@ -43,12 +44,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: preloaderScript }} />
-      </head>
       <body
         className={`${geistNunito.variable}`}
       >
+        <Script
+          id="preloader-script"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: preloaderScript }}
+        />
         {/* Прелоадер в HTML: виден сразу, скрывается после гидратации */}
         <div id="preloader" aria-hidden>
           <div className="preloader-spinner" />

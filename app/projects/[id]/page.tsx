@@ -64,6 +64,14 @@ export default async function CategoryPage(PageProps: { params: Params }) {
           <h2 className="mb-5 text-2xl font-bold">Описание сайта</h2>
           <div dangerouslySetInnerHTML={{ __html: product.desc }}>
           </div>
+          <a
+            href={product.linkSite}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-grad mt-6 inline-flex"
+          >
+            Перейти на сайт
+          </a>
         </div>
 
         <div className="glass seo-text p-6 sm:p-8">
